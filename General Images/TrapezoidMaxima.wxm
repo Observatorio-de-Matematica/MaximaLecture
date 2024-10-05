@@ -1,0 +1,20 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+f: tan(2*x)^2$
+a: 0$
+b: 1$
+N: 5$
+h: float (b-a) / N$
+sum: (ev(f, numer, x=a) + ev(f, numer, x=b)) / 2.0$
+t: float(a)$
+for i: 1 thru N-1 do (
+    t: t+h,
+    sum: sum + ev (f, numer, x = t) )$
+print("Trapezoid Estimate is:", h*sum) $
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$
